@@ -8,8 +8,14 @@ authors:
 
 license: MIT
 
-development_dependencies:
+dependencies:
   coverage:
     # github: anykeyh/crystal-coverage
     github: drhuffman12/crystal-coverage
     branch: drhuffman12/update_for_Crystal_1_0_0
+
+# development_dependencies:
+#   coverage:
+#     # github: anykeyh/crystal-coverage
+#     github: drhuffman12/crystal-coverage
+#     branch: drhuffman12/update_for_Crystal_1_0_0
