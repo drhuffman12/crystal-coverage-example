@@ -1,2 +1,39 @@
 # crystal-coverage-example
+
 This is an example repo for testing https://github.com/anykeyh/crystal-coverage (in particular for testing my fork at https://github.com/drhuffman12/crystal-coverage).
+
+## Installation
+
+1. Add the dependency to your `shard.yml`:
+
+   ```yaml
+   dependencies:
+     crystal-coverage-example:
+       github: your-github-user/crystal-coverage-example
+   ```
+
+2. Run `shards install`
+
+## Usage
+
+```crystal
+require "crystal-coverage-example"
+```
+
+TODO: Write usage instructions here
+
+## Development
+
+TODO: Write development instructions here
+
+## Contributing
+
+1. Fork it (<https://github.com/your-github-user/crystal-coverage-example/fork>)
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create a new Pull Request
+
+## Contributors
+
+- [Daniel Huffman](https://github.com/your-github-user) - creator and maintainer
