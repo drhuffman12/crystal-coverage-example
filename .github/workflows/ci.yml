@@ -38,7 +38,9 @@ jobs:
 
       - name: Build
         # run: shards install --ignore-crystal-version --skip-postinstall
-        run: shards install --ignore-crystal-version --without-development
+        # run: shards install --ignore-crystal-version --without-development
+        run: shards install --ignore-crystal-version
+        # run: shards install --ignore-crystal-version && shards build
 
       - name: Test
         run: crystal spec
