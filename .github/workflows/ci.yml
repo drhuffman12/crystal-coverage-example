@@ -48,7 +48,20 @@ jobs:
       - name: Test
         run: crystal spec
 
+      ## The below parts should always pass on Linux, but might not pass (yet) on other platforms
+      ## ... so these are moved to the 'coverage_etc' section further below.
+      # - name: Check code coverage
+      #   # run: .github/workflows/coverage.sh 50
+      #   run: .github/workflows/coverage.sh 90
+      #   # run: bin/crystal-coverage
+
+      # - name: Check formatting
+      #   run: crystal tool format --check src spec
+
   coverage_etc:
+    # This of for parts that should always pass on Linux, but might not pass (yet) on other platforms; e.g.:
+    #   * Windows doesn't normally come with `make, so using `make bin` (for dependencies) break the Windows builds.
+    # GOAL: Re-evaluate every so often and move applicable 'steps' up into 'build' job as applicable.
     runs-on: ubuntu-latest
     steps:
       - name: Install Crystal
@@ -76,6 +89,7 @@ jobs:
       #   run: crystal bin/ameba.cr
 
   docs:
+    # We could build the doc's on all OS's, but we really only need it build on one; we'll go with the most supported.
     runs-on: ubuntu-latest
     steps:
       - name: Install Crystal
