@@ -51,8 +51,8 @@ jobs:
         run: crystal tool format --check src spec
 
       - name: Check code coverage
-        run: .github/workflows/coverage.sh 50
-        # run: .github/workflows/coverage.sh 90
+        # run: .github/workflows/coverage.sh 50
+        run: .github/workflows/coverage.sh 90
         # run: bin/crystal-coverage
 
       # - name: Check style/etc
