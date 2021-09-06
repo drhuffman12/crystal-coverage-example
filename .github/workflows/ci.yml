@@ -48,9 +48,6 @@ jobs:
       - name: Test
         run: crystal spec
 
-      - name: Check formatting
-        run: crystal tool format --check src spec
-
   coverage_etc:
     runs-on: ubuntu-latest
     steps:
@@ -71,6 +68,9 @@ jobs:
         run: .github/workflows/coverage.sh 50
         # run: .github/workflows/coverage.sh 90
         # run: bin/crystal-coverage
+
+      - name: Check formatting
+        run: crystal tool format --check src spec
 
       # - name: Check style/etc
       #   run: crystal bin/ameba.cr
