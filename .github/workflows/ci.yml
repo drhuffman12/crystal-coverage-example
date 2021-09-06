@@ -58,8 +58,10 @@ jobs:
       # - name: Check formatting
       #   run: crystal tool format --check src spec
 
-  coverage_etc:
-    # This of for parts that should always pass on Linux, but might not pass (yet) on other platforms; e.g.:
+  once_coverage_etc:
+    # We could run coverage, etc on all OS's, but we really only need to do so on one OS,
+    #   so, we'll go with the most Crystal-supported OS.
+    # Also, these 'steps' should always pass on Linux, but might not pass (yet) on other platforms; e.g.:
     #   * Windows doesn't normally come with `make, so using `make bin` (for dependencies) break the Windows builds.
     # GOAL: Re-evaluate every so often and move applicable 'steps' up into 'build' job as applicable.
     runs-on: ubuntu-latest
@@ -78,8 +80,8 @@ jobs:
         run: shards install
 
       - name: Check code coverage
-        # run: .github/workflows/coverage.sh 50
-        run: .github/workflows/coverage.sh 90
+        run: .github/workflows/coverage.sh 50
+        # run: .github/workflows/coverage.sh 90
         # run: bin/crystal-coverage
 
       - name: Check formatting
@@ -88,8 +90,9 @@ jobs:
       # - name: Check style/etc
       #   run: crystal bin/ameba.cr
 
-  docs:
-    # We could build the doc's on all OS's, but we really only need it build on one; we'll go with the most supported.
+  once_docs:
+    # We could build the doc's on all OS's, but we really only need doc's built once.
+    # So, we'll go with the most Crystal-supported OS.
     runs-on: ubuntu-latest
     steps:
       - name: Install Crystal
@@ -106,6 +109,7 @@ jobs:
         run: shards install
 
       - name: Docs
+        # run: crystal docs
         run: .github/workflows/regen_docs
 
   # docs:
