@@ -54,6 +54,19 @@ jobs:
   coverage_etc:
     runs-on: ubuntu-latest
     steps:
+      - name: Install Crystal
+        uses: oprypin/install-crystal@v1
+        with:
+          crystal: ${{matrix.crystal}}
+
+      - name: Download source
+        uses: actions/checkout@v2
+
+      - name: Build
+        # run: shards install --ignore-crystal-version --skip-postinstall
+        # run: shards install --ignore-crystal-version --without-development
+        run: shards install
+
       - name: Check code coverage
         run: .github/workflows/coverage.sh 50
         # run: .github/workflows/coverage.sh 90
