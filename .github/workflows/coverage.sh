@@ -4,9 +4,7 @@
 min=$1
 
 # File(s) to check:
-# f=$2
-# f=src/**/*.cr
-f=spec/**/*_spec.cr
+f=$2
 
 echo "\nTesting min coverage of $min % for files starting with $f\n"
 
@@ -19,5 +17,5 @@ note_failed() {
   exit 1
 }
 
-c=$(lib/coverage/bin/crystal-coverage $f | grep "covered" | grep -Eo '^[0-9]{1,2}')
+c=$(bin/crystal-coverage $f | grep "covered" | grep -Eo '[0-9]{1,2}\.' | grep -Eo '[0-9]{1,2}')
 [ $c -ge $min ] && note_passed || note_failed
