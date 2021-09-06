@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-  pull_request:
+  # pull_request: # Comment this out, because we only want CI run for push's.
   schedule:
     - cron: '0 6 * * 1'  # Every monday 6 AM
 
