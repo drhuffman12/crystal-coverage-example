@@ -16,7 +16,7 @@ This is an example repo for testing https://github.com/anykeyh/crystal-coverage 
 
 2. Add your code with tests.
 
-3. Check coverage by running `bin/crystal-coverage`
+3. Check coverage by running `bin/crystal-coverage --min-cov=90` (or something like that).
 
 ## Installation and usage (for this repo)
 
