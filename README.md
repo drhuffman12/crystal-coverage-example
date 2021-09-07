@@ -1,26 +1,31 @@
 # crystal-coverage-example
 
-This is an example repo for testing https://github.com/anykeyh/crystal-coverage (in particular for testing my fork at https://github.com/drhuffman12/crystal-coverage).
+This is an example repo for testing https://github.com/anykeyh/crystal-coverage ~~(in particular for testing my fork at https://github.com/drhuffman12/crystal-coverage)~~.
 
-## Installation
+## Basic idea
 
 1. Add the dependency to your `shard.yml`:
 
-   ```yaml
-   dependencies:
-     crystal-coverage-example:
-       github: your-github-user/crystal-coverage-example
-   ```
+  ```yaml
+    development_dependencies:
+      coverage:
+        github: anykeyh/crystal-coverage
+  ```
 
+  * See instructions on https://github.com/anykeyh/crystal-coverage .
+
+2. Add your code with tests.
+
+3. Check coverage by running `bin/crystal-coverage`
+
+## Installation and usage (for this repo)
+
+1. Clone repo.
 2. Run `shards install`
-
-## Usage
-
-```crystal
-require "crystal-coverage-example"
+3. Run coverage (and specs) with specified minimum coverage percentage of `90` (or as desired) via
+  * my hacky bash wrapper script: `.github/workflows/coverage.sh 90`
+  * TODO (w/out my hacky bash wrapper script): `bin/crystal-coverage --min-cov=90` (or something like that)
 ```
-
-TODO: Write usage instructions here
 
 ## Development
 
@@ -28,7 +33,7 @@ TODO: Write development instructions here
 
 ## Contributing
 
-1. Fork it (<https://github.com/your-github-user/crystal-coverage-example/fork>)
+1. Fork it (<https://github.com/drhuffman12/crystal-coverage-example/fork>)
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
@@ -36,4 +41,4 @@ TODO: Write development instructions here
 
 ## Contributors
 
-- [Daniel Huffman](https://github.com/your-github-user) - creator and maintainer
+- [Daniel Huffman](https://github.com/drhuffman12) - creator and maintainer
